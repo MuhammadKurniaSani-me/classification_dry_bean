@@ -1,0 +1,467 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white-text);
+}
+
+li {
+    list-style: none;
+}
+
+figure, img, figcaption {
+    display: block;
+}
+
+section {
+    display: block;
+}
+
+.hidden {
+    display: none;
+
+    position: absolute;
+}
+
+/* Body */
+
+body {
+    --main-color: hsl(336, 100%, 58%);
+    --white-color: hsl(0, 0%, 100%);
+    --white-text: var(--white-color);
+}
+
+#header-main-page {
+    position: fixed;
+    z-index: 5;
+
+    padding: 0.5rem;
+    width: 100%;
+
+    background-color: var(--main-color);
+
+    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* Navigation Bar */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+
+    color: var(--white-text);
+
+    cursor: pointer;
+}
+
+/* Website Logo */
+
+.logo,
+.logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    height: 4rem;
+    margin: 0 1rem;
+}
+
+/* Navigation LInks */
+
+.navbar-links {
+    margin: 0 1rem;
+}
+
+.navbar-links ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-link {
+    padding: 0.5rem 0.75rem;
+    margin: 0 0.5rem;
+
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    border-radius: 1rem;
+    background-color: var(--white-text);
+    color: var(--main-color);
+}
+
+/* Hamburger Menu */
+
+.toggle-button {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 2rem;
+    height: 2rem;
+}
+
+.toggle-button .bar {
+    width: 100%;
+    height: 0.325rem;
+
+    border-radius: 1rem;
+
+    background-color: var(--white-text);
+}
+
+/* Hero */
+
+.hero {
+    background-image: url(../assets/images/hero.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    height: 22.5rem;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.hero h1 {
+    color: var(--main-color);
+    font-size: 2rem;
+    text-align: center;
+
+    padding: 1rem 1.5rem;
+    background-color: rgb(255, 255, 255);
+
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+/* Menus */
+
+.menus-container {
+    background-color: var(--white-color);
+    margin: 1rem auto;
+    padding: 2.25rem;
+}
+
+/* Coming Soon */
+
+.coming-soon {
+    height: 27.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coming-soon img {
+    height: 7rem;
+}
+
+.card-container {
+    padding: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* Cards */
+
+.card {
+    aspect-ratio: 1 / 1;
+    height: 16rem;
+    width: 16rem;
+    margin: 1rem;
+
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    border-radius: 0.5rem;
+    box-shadow: 0 0.75rem 2rem hsla(0, 0%, 0%, 0.1);
+}
+
+.card article {
+    display: flex;
+}
+
+.title-card {
+    color: rgba(255, 255, 255, 1);
+}
+
+.description {
+    background-color: white;
+    height: 4rem;
+    padding: 0 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.description h2 {
+    margin: 0 1rem;
+    font-size: 1.05rem;
+    text-transform: capitalize;
+}
+
+/* Button */
+
+.button {
+    background-color: hsl(0, 100%, 58%);
+    aspect-ratio: 2 / 1;
+    height: 2.25rem;
+    border-radius: 0.5rem;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover {
+    background-color: white;
+    color: hsl(0, 100%, 58%);
+    border: 0.2rem solid hsl(0, 100%, 58%);
+    padding: .5rem;
+}
+
+.button p {
+    text-transform: capitalize;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Background Image for Lesson Cards */
+
+.lesson {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Hiragana Card Image */
+
+#hiragana {
+    background-image: url(../images/pictures/hiragana.svg);
+}
+
+/* Kana Character */
+
+.wrapper {
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+}
+
+.letter-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1024px;
+    padding: 1rem;
+    margin: 1rem auto;
+}
+
+.title-letter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.title-letter {
+    display: block;
+    width: max-content;
+    margin: 0 1rem;
+
+    font-size: 1.5rem;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.title-bar {
+    display: inline-block;
+    flex: .5;
+    height: .2rem;
+    background-color: var(--main-color);
+}
+
+.letter-card-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin-top: 1rem;
+}
+
+.letter-card {
+    height: max-content;
+    min-height: 6rem;
+    min-width: fit-content;
+    padding: .5rem .3rem;
+    color: var(--white-text);
+    background-color: var(--main-color);
+    border: .25rem solid var(--main-color);
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 150ms;
+}
+
+.letter-card:hover {
+    background-color: var(--white-color);
+    cursor: pointer;
+    color: var(--main-color);
+}
+
+.kana-char,
+.letter {
+    width: max-content;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.kana-char {
+    font-size: 1.5rem;
+}
+
+.letter {
+    margin-top: .5rem;
+    font-size: 1.25rem;
+}
+
+.letter-card-container li:first-child {
+    display: none;
+}
+
+.letter-container .wrapper:last-child {
+    display: none;
+}
+
+/* Katakana Card Image */
+
+#katakana {
+    background-image: url(../images/pictures/katakana.svg);
+}
+
+#kanji {
+    background-image: url(../images/pictures/kanji.svg);
+}
+
+.self-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.self-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 1rem;
+}
+
+.self {
+    display: flex;
+    position: relative;
+    flex-direction: column-reverse;
+    aspect-ratio: 1 / 1;
+    height: 15rem;
+    width: 15rem;
+    margin: 1.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 250ms;
+    box-shadow: 0 .5rem .75rem hsla(0, 0%, 0%, 0.1);
+}
+
+.self:first-child {
+    display: none;
+}
+
+.self-header {
+    background-color: var(--white-color);
+    border-radius: 0 0 1rem 1rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.self-header h2 {
+    font-size: 1.2rem;
+}
+
+.self:hover {
+    /* transform: translateY(-1rem); */
+    box-shadow: 0 0 .75rem hsla(0, 0%, 0%, .4);
+}
+
+/* Classroom */
+#classroom {
+    background-image: url(../images/pictures/classroom.svg);
+}
+
+/* Quis */
+#quis-lesson {
+    background-image: url(../images/pictures/quis.svg);
+}
+
+/* Footer */
+footer {
+    background-color: var(--main-color);
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+#school {
+    text-transform: uppercase;
+    display: inline;
+}
+.copyright p {
+    color: var(--white-text);
+    text-transform: capitalize;
+    text-align: center;
+}

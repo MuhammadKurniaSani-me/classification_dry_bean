@@ -1,0 +1,378 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    --main-color: hsl(336, 100%, 58%);
+    --white-color: hsl(0, 0%, 100%);
+    --white-text: var(--white-color);
+}
+
+.sections {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem 2rem;
+    padding: 2rem;
+}
+
+.forms-container,
+.input-container,
+.username-container,
+.area-container,
+.perimeter-container,
+.major_axis_length-container,
+.minor_axis_length-container,
+.aspect_ratio-container,
+.eccentricity-container,
+.convex_area,
+.equivalent_diameter-container,
+.extent-container,
+.solidity-container,
+.roundness-container,
+.compactness-container,
+.shape_factor1-container,
+.shape_factor2-container,
+.shape_factor3-container,
+.shape_factor4-container,
+.student-id-container,
+.password-container,
+.confirm-password-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.student-class-container {
+    /* background-color: rgba(0, 0, 0, 0.125); */
+    margin: 0.1rem 0;
+    width: 100%;
+    height: 6.25rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.class-label-container h4 {
+    font-weight: 500;
+    margin: 0.5rem 0;
+}
+
+.class-input-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0.1rem 0;
+    width: 100%;
+    height: 3rem;
+}
+
+.dropdown {
+    position: relative;
+    height: 2.5rem;
+    margin: 0 0.3rem;
+    padding: 0 0.25rem;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.3rem;
+    outline-color: none;
+    cursor: pointer;
+    background-color: var(--main-color);
+}
+
+.dropdown:first-child {
+    margin-left: 0;
+}
+
+.dropdown:last-child {
+    margin-right: 0;
+}
+
+.label-dropdown {
+    color: var(--white-text);
+    padding-left: .5rem;
+}
+
+.arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.2rem;
+}
+
+.arrow-container .arrow {
+    display: block;
+    height: .5rem;
+    transform: rotate(-90deg);
+    transition: 500ms;
+}
+
+.arrow.active {
+    transform: rotate(-180deg);
+} 
+
+.dropdown-content {
+    position: absolute;
+    z-index: 5;
+    top: 3rem;
+    right: 0;
+    left: 0;
+    padding: .25rem 0;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: var(--white-color);
+    border-radius: 0 0 .5rem .5rem;
+    box-shadow: 0 .4rem .75rem rgba(0, 0, 0, 0.5);
+    transition: 500ms;
+}
+
+.dropdown-content.active {
+    visibility: visible;
+    display: flex;
+    opacity: 1;
+}
+
+.dropdown-content li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-content li:hover {
+    background-color: rgba(0, 0, 0, 0.125);
+}
+
+.dropdown-content li p {
+    color: var(--main-color);
+    font-size: 1rem;
+}
+
+.submit-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+.form h1,
+.form p {
+    margin: 0.5rem 0;
+    flex: 0;
+}
+
+.form h1 {
+    margin-top: 0;
+    font-size: xx-large;
+}
+
+.form p {
+    font-size: 0.95rem;
+}
+
+#sign-up {
+    color: hsl(336, 100%, 58%, 0.8);
+    font-weight: 600;
+}
+
+#sign-up:hover {
+    color: var(--main-color);
+}
+
+.forms-container {
+    margin: 1rem 0;
+
+    flex: 2;
+}
+
+.input-container {
+    flex: 1;
+    margin: 1rem 0;
+}
+
+.label-container h4 {
+    font-weight: 500;
+    margin: 0.5rem 0;
+    text-transform: capitalize;
+}
+
+input[type="text"],
+input[type="password"],
+button[type="submit"],
+button[type="button"] {
+    cursor: pointer;
+}
+
+.username-container,
+.student-id-container,
+.password-container,
+.area-container,
+.perimeter-container,
+.major_axis_length-container,
+.minor_axis_length-container,
+.aspect_ratio-container,
+.eccentricity-container,
+.convex_area,
+.equivalent_diameter-container,
+.extent-container,
+.solidity-container,
+.roundness-container,
+.compactness-container,
+.shape_factor1-container,
+.shape_factor2-container,
+.shape_factor3-container,
+.shape_factor4-container,
+.confirm-password-container {
+    height: 6.25rem;
+    margin: 0.1rem 0;
+}
+
+#username:focus,
+#area:focus,
+#perimeter:focus,
+#major_axis_length:focus,
+#minor_axis_length:focus,
+#aspect_ratio:focus,
+#eccentricity:focus,
+#convex_area:focus,
+#equivalent_diameter:focus,
+#extent:focus,
+#solidity:focus,
+#roundness:focus,
+#roundness:focus,
+#compactness:focus,
+#shape_factor1:focus,
+#shape_factor2:focus,
+#shape_factor3:focus,
+#shape_factor4:focus,
+#student-id:focus,
+#password:focus,
+#confirm-password:focus {
+    outline: 0.2rem solid var(--main-color);
+}
+
+#username,
+#student-id,
+#password,
+#confirm-password,
+#area,
+#perimeter,
+#major_axis_length,
+#minor_axis_length,
+#aspect_ratio,
+#eccentricity,
+#convex_area,
+#equivalent_diameter,
+#extent,
+#solidity,
+#roundness,
+#roundness,
+#compactness,
+#shape_factor1,
+#shape_factor2,
+#shape_factor3,
+#shape_factor4 {
+    margin: 0.1rem 0;
+    padding: 0.3rem 0.75rem;
+    width: 100%;
+    height: 3rem;
+    border: none;
+    border-radius: 0.3rem;
+    outline-color: none;
+    background-color: rgba(0, 0, 0, 0.125);
+}
+
+.classify-box {
+    flex: 1;
+    width: 80%;
+}
+
+#classify {
+    margin: 0;
+    width: 100%;
+    height: 3rem;
+    border: none;
+    border-radius: 0.3rem;
+}
+
+button p {
+    font-weight: 600;
+    font-size: x-large;
+}
+
+#classify {
+    opacity: 0.8;
+}
+
+#classify:hover {
+    opacity: 1;
+}
+
+#classify {
+    opacity: 0.8;
+    background-color: var(--main-color);
+}
+
+#classify p {
+    color: var(--white-text);
+}
+
+#classify p {
+    line-height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.classify-box #login-icon {
+    height: 1.5rem;
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+.classify-box #login-icon {
+    height: 1.75rem;
+}
+
+.validasi-data {
+    position: relative;
+}
+
+.empty-cheker,
+.invalid-cheker,
+.wrong-password-cheker {
+    margin: 0.15rem 0;
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    color: hsl(0, 70%, 50%);
+}
+
+.empty-cheker {
+    z-index: 1;
+}
+
+.invalid-cheker {
+    z-index: 2;
+}
+
+.wrong-password-cheker {
+    z-index: 3;
+}

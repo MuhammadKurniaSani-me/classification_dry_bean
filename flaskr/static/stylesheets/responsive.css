@@ -1,0 +1,235 @@
+/* For device with screen under 1024px */
+@media all and (max-width: 1280px) {
+}
+
+/* For device with screen under 1024px */
+@media all and (max-width: 1024px) {
+    /* Hero */
+
+    .hero {
+        height: 20rem;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    /* Coming Soon */
+    .coming-soon {
+        height: 25rem;
+    }
+
+    .coming-soon img {
+        height: 6rem;
+    }
+
+    /* Menus */
+
+    .menus-container {
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    /* Cards */
+
+    .card-container {
+        padding: 1rem;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .card {
+        height: 17.5rem;
+        width: 17.5rem;
+    }
+
+    .description h2 {
+        font-size: 1.05rem;
+
+        margin-left: 0.75rem;
+    }
+
+    /* Footer */
+
+    .footer .logo img {
+        height: 3.5rem;
+    }
+
+    .copyright p,
+    #school {
+        font-size: 0.75rem;
+    }
+}
+
+/* For device with screen under 768px */
+@media all and (max-width: 768px) {
+    /* Navbar */
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-links ul {
+        padding: 1rem 0;
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .navbar-links li {
+        height: 3rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0.7rem;
+        margin: 0 0.5rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    /* Hero */
+
+    .hero {
+        height: 17.5rem;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+
+        padding: 1rem 1.5rem;
+
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    /* Coming Soon */
+
+    .coming-soon {
+        height: 25rem;
+    }
+
+    .coming-soon img {
+        height: 7rem;
+    }
+
+    /* Menus */
+
+    .menus-container {
+        padding: 2rem;
+    }
+
+    .card-container {
+        padding: 1rem;
+
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    /* Cards */
+
+    .card {
+        margin: 1rem;
+        height: 15rem;
+        width: 15rem;
+    }
+
+    .description h2 {
+        margin-left: 0.5rem;
+    }
+
+    /* Kana Character */
+    .title-letter {
+        font-size: 1.25rem;
+    }
+
+
+    /* Button sign in and sign up */
+    .forms-container .submit-button-container {
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .forms-container .create-account-box,
+    .forms-container .google-login-box {
+        flex: unset;
+        width: 100%;
+        margin: 0;
+    }
+
+    .forms-container .create-account-box {
+        margin-bottom: 0.15rem;
+    }
+
+    .forms-container .google-login-box {
+        margin-top: 0.15rem;
+    }
+
+    /* Footer */
+
+    footer .container {
+        flex-direction: column;
+    }
+
+    footer .logo img {
+        height: 2.5rem;
+    }
+}
+
+/* For Smartphone */
+
+@media all and (max-width: 640px) {
+    /* Hero */
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Coming Soon */
+    .coming-soon {
+        height: 20rem;
+    }
+
+    .coming-soon img {
+        height: 5rem;
+    }
+
+    /* Menus */
+    .menus-container {
+        padding: 2rem 0.75rem;
+    }
+
+    /* Cards */
+
+    .card-container {
+        padding: 0.5rem;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .card {
+        margin: 1.5rem 0;
+    }
+
+    .card:first-child {
+        margin-top: 0;
+    }
+
+    /* Hiragana Character */
+
+}

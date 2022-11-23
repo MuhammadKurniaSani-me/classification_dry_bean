@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/logo_icon.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/dataset.css') }}">
+    <script src="{{ url_for('static', filename='javascripts/index.js') }}" defer="defer"></script>
+    <script src="{{ url_for('static', filename='javascripts/dropdown.js') }}" defer="defer"></script>
+    <title>Classify a Data</title>
+</head>
+
+<body>
+    <header id="header-main-page">
+        <nav class="navbar">
+            <figure class="logo">
+                <a href="#">
+                    <img src="{{ url_for('static', filename='assets/icons/logo_icon.png') }}" alt="Logo">
+                </a>
+            </figure>
+            <div class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="navbar-links">
+                <ul>
+                    <li>
+                        <a class="nav-link" href="{{ url_for('dataset') }}">Data</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Preproccessing</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Modelling</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ url_for('input') }}">Classifier</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>
+                Dataset
+                <p>
+                    Dry Bean
+                </p>
+            </h1>
+        </section>
+        <section class="form sections">
+            {% for table in tables %}
+            <h2>{{titles[loop.index]}}</h2>
+            {{ table|safe }}
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>
+                    by muhammad kurnia sani © all right reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+</body></html>

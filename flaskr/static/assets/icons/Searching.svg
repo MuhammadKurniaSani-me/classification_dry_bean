@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 128 128"
+   version="1.1"
+   id="svg21"
+   sodipodi:docname="Searching.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview23"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.9609375"
+     inkscape:cx="-5.6095618"
+     inkscape:cy="70.884462"
+     inkscape:window-width="1366"
+     inkscape:window-height="704"
+     inkscape:window-x="0"
+     inkscape:window-y="36"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg21" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1{fill:#a0aec0;}</style>
+  </defs>
+  <title
+     id="title6">Searching</title>
+  <path
+     class="cls-1"
+     d="M 111.68,1 A 11,11 0 0 0 107,10 V 84.17 L 95.12,72.29 A 4.39,4.39 0 0 0 92,71 c -2.43,0 -0.48,1.45 -4.27,-2.34 a 29,29 0 1 0 -7.07,7.07 C 84.45,79.52 83,77.56 83,80 a 4.39,4.39 0 0 0 1.29,3.12 c 22.19,22.19 20.95,21.35 22.71,21.77 v 11.78 c 0,9.1 -10.88,14 -17.4,7 A 10,10 0 0 1 87,117.63 c 0,-0.65 0,-9.73 0,-9.63 a 1,1 0 0 0 -1,-1 H 21 V 11 A 10,10 0 0 1 31,1 Z"
+     id="path8"
+     style="fill:#ffffff" />
+  <path
+     class="cls-1"
+     d="M 44,52 A 20,20 0 0 0 64,72 C 81.65,72 90.76,50.5 78.13,37.87 65.5,25.24 44,34.27 44,52 Z"
+     id="path10"
+     style="fill:#ffffff" />
+  <path
+     class="cls-1"
+     d="M 90.38,127 H 11 A 10,10 0 0 1 1,117 v -8 h 84 v 8 a 12,12 0 0 0 5.38,10 z"
+     id="path16"
+     style="fill:#ffffff" />
+  <path
+     class="cls-1"
+     d="m 118,1 a 9,9 0 0 1 9,9 v 9 h -18 v -9 a 9,9 0 0 1 9,-9 z"
+     id="path18"
+     style="fill:#ffffff" />
+</svg>

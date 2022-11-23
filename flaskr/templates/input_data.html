@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/logo_icon.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/student_sign_up.css') }}">
+    <script src="{{ url_for('static', filename='javascripts/index.js') }}" defer="defer"></script>
+    <script src="{{ url_for('static', filename='javascripts/dropdown.js') }}" defer="defer"></script>
+    <title>Classify a Data</title>
+</head>
+
+<body>
+    <header id="header-main-page">
+        <nav class="navbar">
+            <figure class="logo">
+                <a href="#">
+                    <img src="{{ url_for('static', filename='assets/icons/logo_icon.png') }}" alt="Logo">
+                </a>
+            </figure>
+            <div class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="navbar-links">
+                <ul>
+                    <li>
+                        <a class="nav-link" href="{{ url_for('dataset') }}">Data</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Preproccessing</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Modelling</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ url_for('input') }}">Classifier</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>
+                Classifier
+                <p>
+                    Dry Bean
+                </p>
+            </h1>
+        </section>
+        <section class="form sections">
+            <form class="forms-container" name="form_sign_up" action="#" method="POST" onsubmit="">
+                <div class="input-container">
+                    <!-- Area -->
+                    <div class="area-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="area">Area</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="area" id="area" onkeypress="checkName()" ;="">
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_area">
+                                    area tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_area">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Perimeter -->
+                    <div class="perimeter-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="perimeter">Perimeter</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="perimeter" id="perimeter" onkeypress="checkName()" ;="">
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_perimeter">
+                                    perimeter tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_perimeter">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Major Axis Length -->
+                    <div class="major_axis_length-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="major_axis_length">Major Axis Length</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="major_axis_length" id="major_axis_length" onkeypress="checkName()" ;=""
+                            >
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empt_ymajor_axis_length">
+                                    major_axis_length tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_major_axis_length">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Minor Axis Length -->
+                    <div class="minor_axis_length-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="minor_axis_length">Minor Axis Length</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="minor_axis_length" id="minor_axis_length" onkeypress="checkName()" ;=""
+                            >
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_minor_axis_length">
+                                    minor_axis_length tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_minor_axis_length">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Aspect Ratio -->
+                    <div class="aspect_ratio-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="aspect_ratio">aspect ratio</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="aspect_ratio" id="aspect_ratio" onkeypress="checkName()" ;=""
+                            >
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_aspect_ratio">
+                                    aspect_ratio tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_aspect_ratio">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Eccentricity -->
+                    <div class="eccentricity-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="eccentricity">eccentricity</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="eccentricity" id="eccentricity" onkeypress="checkName()" ;=""
+                            >
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_eccentricity">
+                                    eccentricity tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_eccentricity">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Convex Area -->
+                    <div class="convex_area-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="convex_area">convex area</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="convex_area" id="convex_area" onkeypress="checkName()" ;=""
+                            >
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_convex_area">
+                                    convex_area tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_convex_area">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Equivalent Diameter -->
+                    <div class="equivalent_diameter-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="equivalent_diameter">equivalent diameter</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="equivalent_diameter" id="equivalent_diameter" onkeypress="checkName()" ;=""
+                            >
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_equivalent_diameter">
+                                    equivalent_diameter tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_equivalent_diameter">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Extent -->
+                    <div class="extent-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="extent">extent</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="extent" id="extent" onkeypress="checkName()" ;="">
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_extent">
+                                    extent tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_extent">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Solidity -->
+                    <div class="solidity-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="solidity">solidity</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="solidity" id="solidity" onkeypress="checkName()" ;="">
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_solidity">
+                                    solidity tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_solidity">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- roundness -->
+                    <div class="roundness-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="roundness">roundness</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="roundness" id="roundness" onkeypress="checkName()" ;="">
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_roundness">
+                                    roundness tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_roundness">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- compactness -->
+                    <div class="compactness-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="compactness">compactness</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="compactness" id="compactness" onkeypress="checkName()" ;="">
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_compactness">
+                                    compactness tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_compactness">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Shape Factor1 -->
+                    <div class="shape_factor1-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="shape_factor1">shape factor 1</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="shape_factor1" id="shape_factor1" onkeypress="checkName()" ;=""
+                            >
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_shape_factor1">
+                                    shape_factor1 tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_shape_factor1">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Shape Factor2 -->
+                    <div class="shape_factor2-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="shape_factor2">shape factor 2</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="shape_factor2" id="shape_factor2" onkeypress="checkName()" ;=""
+                            >
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_shape_factor2">
+                                    shape_factor2 tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_shape_factor2">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Shape Factor3 -->
+                    <div class="shape_factor3-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="shape_factor3">Shape Factor 3</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="shape_factor3" id="shape_factor3" onkeypress="checkName()" ;=""
+                            >
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_shape_factor3">
+                                /home/mxsani/Documents/progamming/python/Environment/classification/flaskr/templates/Daftar.html  shape_factor3 tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_shape_factor3">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Shape Factor4 -->
+                    <div class="shape_factor4-container">
+                        <div class="label-container">
+                            <h4>
+                                <label for="shape_factor4">shape factor 4</label>
+                            </h4>
+                        </div>
+                        <div class="input-box">
+                            <input type="number" min="0.00000000001" step="0.00000000001" name="shape_factor4" id="shape_factor4" onkeypress="checkName()" ;=""
+                            >
+                    
+                            <!-- peringatan -->
+                            <div class="validasi_data">
+                                <!-- peringatan pertama jika masukan nama kosong -->
+                                <div class="empty-cheker" id="empty_shape_factor4">
+                                    shape_factor4 tidak boleh kosong
+                                </div>
+                    
+                                <!-- peringatan kedua jika jumlah digit karakter kurang -->
+                                <div class="invalid-cheker" id="invalid_shape_factor4">
+                                    Panjang karakter minimal 8 huruf
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Student Class -->
+                    <!-- <div class="student-class-container">
+                        <div class="class-label-container">
+                            <h4>
+                                Kelas
+                            </h4>
+                        </div>
+                        <div class="class-input-box">
+                            <div class="class dropdown">
+                                <p class="label-dropdown">Kelas</p>
+                                <figure class="arrow-container">
+                                    <img class="arrow" src="../static/assets/icons/arrow.svg" alt="Arrow">
+                                </figure>
+                                <ul class="dropdown-content">
+                                    <li>
+                                        <p>
+                                            10
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            11
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            12
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="field dropdown">
+                                <p class="label-dropdown">Jurusan</p>
+                                <figure class="arrow-container">
+                                    <img class="arrow" src="../static/assets/icons/arrow.svg" alt="Arrow">
+                                </figure>
+                                <ul class="dropdown-content">
+                                    <li>
+                                        <p>
+                                            IPA
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            IPS
+                                        </p>
+                                    </li>
+                                </ul>
+                                <li>
+                                    <p>
+                                        9
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        10
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+                    <!-- peringatan -->
+                    <!-- <div class="validasi_data"></div> -->
+                </div>
+            </div>
+            <div class="submit-button-container">
+                <div class="classify-box">
+                    <button id="classify" type="submit">
+                        <p>
+                            <img src="{{ url_for('static', filename='assets/icons/Searching.svg') }}" alt="Login" id="login-icon">
+                            Klasifikasi!
+                        </p>
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>
+                    by muhammad kurnia sani © all right reserved
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+</body></html>
