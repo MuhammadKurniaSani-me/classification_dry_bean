@@ -8,6 +8,26 @@ from scipy.io import arff
 app = Flask(__name__, template_folder='flaskr/templates',
             static_folder='flaskr/static')
 
+attribute_information = {
+"a":"Area (A): The area of a bean zone and the number of pixels within its boundaries.",
+"P":"Perimeter (P): Bean circumference is defined as the length of its border.",
+"L":"Major axis length (L): The distance between the ends of the longest line that can be drawn from a bean.",
+"l":"Minor axis length (l): The longest line that can be drawn from the bean while standing perpendicular to the main axis.",
+"K":"Aspect ratio (K): Defines the relationship between L and l.",
+"Ec":"Eccentricity (Ec): Eccentricity of the ellipse having the same moments as the region.",
+"C":"Convex area (C): Number of pixels in the smallest convex polygon that can contain the area of a bean seed.",
+"Ed":"Equivalent diameter (Ed): The diameter of a circle having the same area as a bean seed area.",
+"Ex":"Extent (Ex): The ratio of the pixels in the bounding box to the bean area.",
+"S":"Solidity (S): Also known as convexity. The ratio of the pixels in the convex shell to those found in beans.",
+"R":"Roundness (R): Calculated with the following formula: (4piA)/(P^2)",
+"CO":"Compactness (CO): Measures the roundness of an object: Ed/L",
+"SF1":"ShapeFactor1 (SF1)",
+"SF2":"ShapeFactor2 (SF2)",
+"SF3":"ShapeFactor3 (SF3)",
+"SF4":"ShapeFactor4 (SF4)",
+"Class":"Class (Seker, Barbunya, Bombay, Cali, Dermosan, Horoz and Sira)",
+}
+
 # Main function here
 
 
@@ -44,13 +64,12 @@ def input():
                          "area", "perimeter", "major_axis_length", "minor_axis_length", "aspect_ratio", "eccentricity", "convex_area", "equivalent_diameter", "extent", "solidity", "roundness", "compactness", "shape_factor1", "shape_factor2", "shape_factor3", "shape_factor4"])
 
         # Get prediction
-        prediction = X
+        prediction = X.to_numpy()
 
     else:
         prediction = pd.DataFrame(np.zeros([1,17]))
 
-    # return render_template("input_data.html", output=prediction)
-    return render_template('input_data.html', tables=[prediction.to_html()], titles=['sdsd'])
+    return render_template("input_data.html", output=prediction)
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/dataset', methods=['GET', 'POST'])
@@ -59,11 +78,14 @@ def dataset():
     dataset_path = 'flaskr/static/assets/datasets/Dry_Bean_Dataset.arff'
     dataset = arff.loadarff(dataset_path)
     df = pd.DataFrame(dataset[0])
-    df = df.head(10)
-    return render_template('dataset.html', tables=[df.to_html()], titles=[''])
+    df = df.head(15).iloc[1:, 0:]
+    df.columns = ["A","P","L","l","K","Ec","C","Ed","Ex","S","R","CO","SF1","SF2","SF3","SF4", "Class"]
+    return render_template('dataset.html', tables=[df.to_html(notebook=True, table_id="dataset", classes="table", index=False)], columns_name=df.columns, attribute_names=attribute_information)
 # ------------------
 
 
 # Running the app
 if __name__ == '__main__':
     app.run(debug=True)
+
+# Class Seker, Barbunya, Bombay, Cali, Dermosan, Horoz and Sira

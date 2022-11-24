@@ -1,53 +1,67 @@
-/* Content section */
-.profile-content {
-    flex: 2;
-    padding: 1rem;
-    order: 2;
+.table-sections {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
-.profile-content article {
-    height: fit-content;
-}
+/* Data Table */
 
-.profile-content ul li {
-    padding: 0.5rem 0;
-}
-
-.profile-content ul li:first-child {
-    padding-top: 0;
-}
-
-.field-data {
-    display: flex;
-}
-
-.field-data h5,
-.field-data p {
-    padding: 0.5rem 0;
-}
-
-.profile-account ul,
-.field-data h5,
-.field-data p {
-    flex: 0.25;
-    border-radius: 0.5rem;
-    color: hsl(225, 73%, 10%);
+.table thead tr th {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.5);
+    font-weight: normal;
+    background-color: var(--main-color);
+    color: var(--white-color)
 }
 
-.field-data h5 {
-    margin-right: 1rem;
+table,
+table tr,
+table thead tr th,
+table td {
+    text-align: center;
+    text-transform: capitalize;
+    border-collapse: collapse;
+    border-width: 0;
+    border-color: #333;
 }
 
-.field-data p {
-    flex: 1;
+.table th, 
+.table td {
+    border-width: .15em;
+    border-style: solid;
+    border-color: hsla(0, 0%, 10%, 0.1);
+    background-color: hsla(0, 0%, 10%, 0.1);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
+.table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
 
-/* Responsive */
-@media all and (max-width: 640px) {
-    .main {
-        flex-direction: column-reverse;
-    }
+.table tr:hover {
+    background-color: #ddd;
+}
+
+.table tbody tr:hover {
+    background-color: hsla(0, 0%, 10%, 0.125);
+}
+
+.dataset-description .table {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
+    overflow-x: auto;
+    overflow-y: auto;
 }
