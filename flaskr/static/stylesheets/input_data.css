@@ -10,6 +10,7 @@ body {
     --white-text: var(--white-color);
 }
 
+.result,
 .sections {
     width: 100%;
     height: 100%;
@@ -17,9 +18,9 @@ body {
     padding: 2rem;
 }
 
+
 .forms-container,
 .input-container,
-.username-container,
 .area-container,
 .perimeter-container,
 .major_axis_length-container,
@@ -35,10 +36,7 @@ body {
 .shape_factor1-container,
 .shape_factor2-container,
 .shape_factor3-container,
-.shape_factor4-container,
-.student-id-container,
-.password-container,
-.confirm-password-container {
+.shape_factor4-container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -69,93 +67,6 @@ body {
     height: 3rem;
 }
 
-.dropdown {
-    position: relative;
-    height: 2.5rem;
-    margin: 0 0.3rem;
-    padding: 0 0.25rem;
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 0.3rem;
-    outline-color: none;
-    cursor: pointer;
-    background-color: var(--main-color);
-}
-
-.dropdown:first-child {
-    margin-left: 0;
-}
-
-.dropdown:last-child {
-    margin-right: 0;
-}
-
-.label-dropdown {
-    color: var(--white-text);
-    padding-left: .5rem;
-}
-
-.arrow-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0.2rem;
-}
-
-.arrow-container .arrow {
-    display: block;
-    height: .5rem;
-    transform: rotate(-90deg);
-    transition: 500ms;
-}
-
-.arrow.active {
-    transform: rotate(-180deg);
-} 
-
-.dropdown-content {
-    position: absolute;
-    z-index: 5;
-    top: 3rem;
-    right: 0;
-    left: 0;
-    padding: .25rem 0;
-    display: flex;
-    visibility: hidden;
-    opacity: 0;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background-color: var(--white-color);
-    border-radius: 0 0 .5rem .5rem;
-    box-shadow: 0 .4rem .75rem rgba(0, 0, 0, 0.5);
-    transition: 500ms;
-}
-
-.dropdown-content.active {
-    visibility: visible;
-    display: flex;
-    opacity: 1;
-}
-
-.dropdown-content li {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.dropdown-content li:hover {
-    background-color: rgba(0, 0, 0, 0.125);
-}
-
-.dropdown-content li p {
-    color: var(--main-color);
-    font-size: 1rem;
-}
-
 .submit-button-container {
     display: flex;
     flex-direction: row;
@@ -163,6 +74,7 @@ body {
     width: 100%;
     margin: 1rem 0;
 }
+
 
 .form {
     display: flex;
@@ -220,9 +132,6 @@ button[type="button"] {
     cursor: pointer;
 }
 
-.username-container,
-.student-id-container,
-.password-container,
 .area-container,
 .perimeter-container,
 .major_axis_length-container,
@@ -238,13 +147,11 @@ button[type="button"] {
 .shape_factor1-container,
 .shape_factor2-container,
 .shape_factor3-container,
-.shape_factor4-container,
-.confirm-password-container {
+.shape_factor4-container {
     height: 6.25rem;
     margin: 0.1rem 0;
 }
 
-#username:focus,
 #area:focus,
 #perimeter:focus,
 #major_axis_length:focus,
@@ -261,17 +168,10 @@ button[type="button"] {
 #shape_factor1:focus,
 #shape_factor2:focus,
 #shape_factor3:focus,
-#shape_factor4:focus,
-#student-id:focus,
-#password:focus,
-#confirm-password:focus {
+#shape_factor4:focus {
     outline: 0.2rem solid var(--main-color);
 }
 
-#username,
-#student-id,
-#password,
-#confirm-password,
 #area,
 #perimeter,
 #major_axis_length,
@@ -294,14 +194,14 @@ button[type="button"] {
     width: 100%;
     height: 3rem;
     border: none;
-    border-radius: 0.3rem;
     outline-color: none;
     background-color: rgba(0, 0, 0, 0.125);
+    border-radius: 0.3rem;
 }
 
 .classify-box {
     flex: 1;
-    width: 80%;
+    width: 100%;
 }
 
 #classify {
@@ -349,6 +249,31 @@ button p {
 
 .classify-box #login-icon {
     height: 1.75rem;
+}
+
+/* Result Box*/
+.result {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+
+.result .title {
+    text-align: center;
+    text-transform: capitalize;
+    margin: 1rem 0 1.5rem 0;
+    padding-bottom: .5em;
+    border-bottom: .125em solid hsl(336, 100%, 58%);
+}
+
+.result .desc { 
+    font-size: 1.05em;
+    background-color: hsla(336, 100%, 58%, 0.7);
+    padding: .75em .75em;
+    margin: .5em 0;
+    border-radius: 0.3rem;
+    text-align: center;
 }
 
 .validasi-data {

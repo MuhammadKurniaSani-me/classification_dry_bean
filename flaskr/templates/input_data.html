@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='assets/icons/logo_icon.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/responsive.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/student_sign_up.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/input_data.css') }}">
     <script src="{{ url_for('static', filename='javascripts/index.js') }}" defer="defer"></script>
     <script src="{{ url_for('static', filename='javascripts/dropdown.js') }}" defer="defer"></script>
     <title>Classify a Data</title>
@@ -32,13 +32,13 @@
                         <a class="nav-link" href="{{ url_for('dataset') }}">Data</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="#">Preproccessing</a>
+                        <a class="nav-link" href="{{ url_for('preproccessing') }}">Preproccessing</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="#">Modelling</a>
+                        <a class="nav-link" href="{{ url_for('modelling') }}">Modelling</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="{{ url_for('input') }}">Classifier</a>
+                        <a class="nav-link {{ navbar_post }}" href="{{ url_for('input') }}">Classifier</a>
                     </li>
                 </ul>
             </div>
@@ -65,7 +65,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="area" id="area" onkeypress="checkName()" ;="">
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="254616.0" name="area" id="area" onkeypress="checkName()" ;="">
                     
                             <!-- peringatan -->
                             <div class="validasi_data">
@@ -90,7 +90,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="perimeter" id="perimeter" onkeypress="checkName()" ;="">
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="1985.37" name="perimeter" id="perimeter" onkeypress="checkName()" ;="">
                     
                             <!-- peringatan -->
                             <div class="validasi_data">
@@ -115,7 +115,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="major_axis_length" id="major_axis_length" onkeypress="checkName()" ;=""
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="738.860153" name="major_axis_length" id="major_axis_length" onkeypress="checkName()" ;=""
                             >
                     
                             <!-- peringatan -->
@@ -141,7 +141,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="minor_axis_length" id="minor_axis_length" onkeypress="checkName()" ;=""
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="460.198497" name="minor_axis_length" id="minor_axis_length" onkeypress="checkName()" ;=""
                             >
                     
                             <!-- peringatan -->
@@ -167,7 +167,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="aspect_ratio" id="aspect_ratio" onkeypress="checkName()" ;=""
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="2.430306" name="aspect_ratio" id="aspect_ratio" onkeypress="checkName()" ;=""
                             >
                     
                             <!-- peringatan -->
@@ -193,7 +193,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="eccentricity" id="eccentricity" onkeypress="checkName()" ;=""
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="0.911423" name="eccentricity" id="eccentricity" onkeypress="checkName()" ;=""
                             >
                     
                             <!-- peringatan -->
@@ -219,7 +219,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="convex_area" id="convex_area" onkeypress="checkName()" ;=""
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="263261.0" name="convex_area" id="convex_area" onkeypress="checkName()" ;=""
                             >
                     
                             <!-- peringatan -->
@@ -245,7 +245,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="equivalent_diameter" id="equivalent_diameter" onkeypress="checkName()" ;=""
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="569.374358" name="equivalent_diameter" id="equivalent_diameter" onkeypress="checkName()" ;=""
                             >
                     
                             <!-- peringatan -->
@@ -271,7 +271,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="extent" id="extent" onkeypress="checkName()" ;="">
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="0.866195" name="extent" id="extent" onkeypress="checkName()" ;="">
                     
                             <!-- peringatan -->
                             <div class="validasi_data">
@@ -296,7 +296,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="solidity" id="solidity" onkeypress="checkName()" ;="">
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="0.994677" name="solidity" id="solidity" onkeypress="checkName()" ;="">
                     
                             <!-- peringatan -->
                             <div class="validasi_data">
@@ -321,7 +321,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="roundness" id="roundness" onkeypress="checkName()" ;="">
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="0.990685" name="roundness" id="roundness" onkeypress="checkName()" ;="">
                     
                             <!-- peringatan -->
                             <div class="validasi_data">
@@ -346,7 +346,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="compactness" id="compactness" onkeypress="checkName()" ;="">
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="0.987303" name="compactness" id="compactness" onkeypress="checkName()" ;="">
                     
                             <!-- peringatan -->
                             <div class="validasi_data">
@@ -371,7 +371,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="shape_factor1" id="shape_factor1" onkeypress="checkName()" ;=""
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="0.010451" name="shape_factor1" id="shape_factor1" onkeypress="checkName()" ;=""
                             >
                     
                             <!-- peringatan -->
@@ -397,7 +397,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="shape_factor2" id="shape_factor2" onkeypress="checkName()" ;=""
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="0.003665" name="shape_factor2" id="shape_factor2" onkeypress="checkName()" ;=""
                             >
                     
                             <!-- peringatan -->
@@ -423,7 +423,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="shape_factor3" id="shape_factor3" onkeypress="checkName()" ;=""
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="0.974767" name="shape_factor3" id="shape_factor3" onkeypress="checkName()" ;=""
                             >
                     
                             <!-- peringatan -->
@@ -449,7 +449,7 @@
                             </h4>
                         </div>
                         <div class="input-box">
-                            <input type="number" min="0.00000000001" step="0.00000000001" name="shape_factor4" id="shape_factor4" onkeypress="checkName()" ;=""
+                            <input type="number" min="0.00000000001" step="0.00000000001" max="0.999733" name="shape_factor4" id="shape_factor4" onkeypress="checkName()" ;=""
                             >
                     
                             <!-- peringatan -->
@@ -542,7 +542,17 @@
                 </div>
             </form>
         </section>
-        {{ output }}
+        <section class="result">
+            {% if output %}
+                <h3 class="hidden">Hasil</h3>
+                <ul>
+                    <li>
+                        <h4 class="title">Class</h4>
+                        <p class="desc">{{ class_value_list[output] }}</p>
+                    </li>
+                </ul>                
+            {% endif %}
+        </section>
     </main>
 
     <footer>

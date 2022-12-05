@@ -48,8 +48,10 @@ y = le.transform(y)
 scaler = StandardScaler().fit(X)
 X = scaler.transform(X)
 
+def getAccucary(e):
+    return e['accuracy']
 
-def run_experiment(model, X_train_param, y_train_param):
+def run_experiment(model, X_train_param, y_train_param, accuracy_values = []):
     """
         get every metric score from a model
     """
@@ -57,29 +59,35 @@ def run_experiment(model, X_train_param, y_train_param):
 
     y_pred = model.predict(X_test)
     accuracy_score_result = accuracy_score(y_test, y_pred)
-    print('Accuracy: %.3f' % accuracy_score_result)
-    return accuracy_score
+    acc = "{:.3f}".format(accuracy_score_result)
+    accuracy_values.append(
+        {
+            "name" : model.__class__.__name__,
+            "accuracy" : acc
+        }
+    )
+    return accuracy_values.sort(reverse=True, key=getAccucary) 
 
+accuracy_values = []
 
 percent_amount_of_test_data = 0.3
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=percent_amount_of_test_data, random_state=0)
 
 model_dtc = DecisionTreeClassifier()
-run_experiment(model_dtc, X_train, y_train)
+run_experiment(model_dtc, X_train, y_train, accuracy_values)
 
 
 model_gnb = GaussianNB()
-run_experiment(model_gnb, X_train, y_train)
+run_experiment(model_gnb, X_train, y_train, accuracy_values)
 
 n_neighbors = 5
 model_neigh = KNeighborsClassifier(n_neighbors=n_neighbors)
-run_experiment(model_neigh, X_train, y_train)
+run_experiment(model_neigh, X_train, y_train, accuracy_values)
 
 
 model_lr = LogisticRegression(random_state=RAND_STATE).fit(X, y)
-run_experiment(model_lr, X_train, y_train)
-
+run_experiment(model_lr, X_train, y_train, accuracy_values)
 
 joblib.dump(model_dtc, "flaskr/static/trained_models/model_dtc.pkl")
 joblib.dump(model_gnb, "flaskr/static/trained_models/model_gnb.pkl")

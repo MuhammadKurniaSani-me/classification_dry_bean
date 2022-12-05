@@ -1,0 +1,12 @@
+
+.preproccessing-description .table {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
+    overflow-x: auto;
+    overflow-y: auto;
+}

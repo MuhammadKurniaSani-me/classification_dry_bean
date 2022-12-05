@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/responsive.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/dataset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/preproccessing.css') }}">
     <script src="{{ url_for('static', filename='javascripts/index.js') }}" defer="defer"></script>
     <script src="{{ url_for('static', filename='javascripts/dropdown.js') }}" defer="defer"></script>
     <title>Classify a Data</title>
@@ -29,10 +30,10 @@
             <div class="navbar-links">
                 <ul>
                     <li>
-                        <a class="nav-link {{ navbar_post }}" href="{{ url_for('dataset') }}">Data</a>
+                        <a class="nav-link" href="{{ url_for('dataset') }}">Data</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="{{ url_for('preproccessing') }}">Preproccessing</a>
+                        <a class="nav-link {{ navbar_post }}" href="{{ url_for('preproccessing') }}">Preproccessing</a>
                     </li>
                     <li>
                         <a class="nav-link" href="{{ url_for('modelling') }}">Modelling</a>
@@ -48,52 +49,73 @@
     <main>
         <section class="hero">
             <h1>
-                Dataset
+                Preproccessing
                 <p>
                     Dry Bean
                 </p>
             </h1>
         </section>
+
         <section class="table-sections dataset">
             <h2 class="hidden"></h2>
-            <a href="https://archive.ics.uci.edu/ml/datasets/Dry+Bean+Dataset" target="_blank" id="main-button">Sumber Dataset</a>
             {% for table in tables %}
                 {{ table|safe }}
             {% endfor %}
         </section>
-        <section class="dataset-description">
+        
+        <section class="preproccessing-description">
             <h2 class="hidden">dataset description</h2>
             <table class="table">
                 <thead>
                     <tr>
-                        <th>
-                            Attribute
-                        </th>
-                        <th>
-                            Description
-                        </th>
+                        <th>Langkah</th>
+                        <th>Description</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for name, desc in attribute_names.items() %}
                     <tr>
                         <td>
-                            <p class="pseudocode">
-                                {{ name }}
+                            <p>
+                                Pisahkan label data dan nilai data
                             </p>
                         </td>
-                        <td>
+                        <td class="pseudocode">
                             <p>
-                                {{ desc }}
+                                X untuk nilai data dan y untuk label data
                             </p>
                         </td>
                     </tr>
-                    {% endfor %}
+                    <tr>
+                        <td>
+                            <p>
+                                Normalisasi data
+                            </p>
+                        </td>
+                        <td class="pseudocode">
+                            <p>
+                                normalisasi dengan Standard Scaler
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pisahkan label data dan nilai data</td>
+                        <td class="pseudocode">
+                            <p>
+                                X untuk nilai data dan y untuk label data
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pisahkan data latih dan data tes</td>
+                        <td class="pseudocode">
+                            <p>
+                                train split test = data X sebanyak 70% dan y sebanyak 30%
+                            </p>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         <section>
-
-        </section>
     </main>
 
     <footer>

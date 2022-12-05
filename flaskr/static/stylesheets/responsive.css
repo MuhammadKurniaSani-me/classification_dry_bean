@@ -30,25 +30,6 @@
         padding: 2rem;
     }
 
-    /* Cards */
-
-    .card-container {
-        padding: 1rem;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-
-    .card {
-        height: 17.5rem;
-        width: 17.5rem;
-    }
-
-    .description h2 {
-        font-size: 1.05rem;
-
-        margin-left: 0.75rem;
-    }
-
     /* Footer */
 
     .footer .logo img {
@@ -132,31 +113,6 @@
         padding: 2rem;
     }
 
-    .card-container {
-        padding: 1rem;
-
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-around;
-    }
-
-    /* Cards */
-
-    .card {
-        margin: 1rem;
-        height: 15rem;
-        width: 15rem;
-    }
-
-    .description h2 {
-        margin-left: 0.5rem;
-    }
-
-    /* Kana Character */
-    .title-letter {
-        font-size: 1.25rem;
-    }
-
 
     /* Button sign in and sign up */
     .forms-container .submit-button-container {
@@ -200,36 +156,9 @@
         font-size: 1.5rem;
     }
 
-    /* Coming Soon */
-    .coming-soon {
-        height: 20rem;
-    }
-
-    .coming-soon img {
-        height: 5rem;
-    }
-
     /* Menus */
     .menus-container {
         padding: 2rem 0.75rem;
     }
-
-    /* Cards */
-
-    .card-container {
-        padding: 0.5rem;
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
-
-    .card {
-        margin: 1.5rem 0;
-    }
-
-    .card:first-child {
-        margin-top: 0;
-    }
-
-    /* Hiragana Character */
 
 }

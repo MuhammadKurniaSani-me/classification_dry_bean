@@ -1,0 +1,175 @@
+/* Hiragana Card Image */
+
+#hiragana {
+    background-image: url(../images/pictures/hiragana.svg);
+}
+
+/* Kana Character */
+
+.wrapper {
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+}
+
+.letter-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1024px;
+    padding: 1rem;
+    margin: 1rem auto;
+}
+
+.title-letter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.title-letter {
+    display: block;
+    width: max-content;
+    margin: 0 1rem;
+
+    font-size: 1.5rem;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.title-bar {
+    display: inline-block;
+    flex: .5;
+    height: .2rem;
+    background-color: var(--main-color);
+}
+
+.letter-card-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin-top: 1rem;
+}
+
+.letter-card {
+    height: max-content;
+    min-height: 6rem;
+    min-width: fit-content;
+    padding: .5rem .3rem;
+    color: var(--white-text);
+    background-color: var(--main-color);
+    border: .25rem solid var(--main-color);
+    border-radius: .25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 150ms;
+}
+
+.letter-card:hover {
+    background-color: var(--white-color);
+    cursor: pointer;
+    color: var(--main-color);
+}
+
+.kana-char,
+.letter {
+    width: max-content;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.kana-char {
+    font-size: 1.5rem;
+}
+
+.letter {
+    margin-top: .5rem;
+    font-size: 1.25rem;
+}
+
+.letter-card-container li:first-child {
+    display: none;
+}
+
+.letter-container .wrapper:last-child {
+    display: none;
+}
+
+/* Katakana Card Image */
+
+#katakana {
+    background-image: url(../images/pictures/katakana.svg);
+}
+
+#kanji {
+    background-image: url(../images/pictures/kanji.svg);
+}
+
+.self-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.self-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 1rem;
+}
+
+.self {
+    display: flex;
+    position: relative;
+    flex-direction: column-reverse;
+    aspect-ratio: 1 / 1;
+    height: 15rem;
+    width: 15rem;
+    margin: 1.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 250ms;
+    box-shadow: 0 .5rem .75rem hsla(0, 0%, 0%, 0.1);
+}
+
+.self:first-child {
+    display: none;
+}
+
+.self-header {
+    background-color: var(--white-color);
+    border-radius: 0 0 1rem 1rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.self-header h2 {
+    font-size: 1.2rem;
+}
+
+.self:hover {
+    /* transform: translateY(-1rem); */
+    box-shadow: 0 0 .75rem hsla(0, 0%, 0%, .4);
+}
+
+/* Classroom */
+#classroom {
+    background-image: url(../images/pictures/classroom.svg);
+}
+
+/* Quis */
+#quis-lesson {
+    background-image: url(../images/pictures/quis.svg);
+}
+

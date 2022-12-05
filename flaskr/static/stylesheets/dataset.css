@@ -11,6 +11,9 @@
 }
 
 /* Data Table */
+.dataset .table {
+    width: 100%;
+}
 
 .table thead tr th {
     text-align: center;
@@ -20,16 +23,12 @@
 }
 
 table,
-table tr,
-table thead tr th,
-table td {
+table thead tr th  {
     text-align: center;
-    text-transform: capitalize;
     border-collapse: collapse;
     border-width: 0;
     border-color: #333;
 }
-
 .table th, 
 .table td {
     border-width: .15em;
@@ -42,6 +41,10 @@ table td {
     padding-right: 0.5em;
 }
 
+.table td::first-letter {
+    text-transform: uppercase;
+}
+
 .table tr:nth-child(even){
     background-color: #f2f2f2;
 }
@@ -52,6 +55,10 @@ table td {
 
 .table tbody tr:hover {
     background-color: hsla(0, 0%, 10%, 0.125);
+}
+
+.preproccessing-description .table .pseudocode {
+    text-transform: none;
 }
 
 .dataset-description .table {

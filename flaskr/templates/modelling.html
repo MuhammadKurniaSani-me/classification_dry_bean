@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/responsive.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/dataset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/modelling.css') }}">
     <script src="{{ url_for('static', filename='javascripts/index.js') }}" defer="defer"></script>
     <script src="{{ url_for('static', filename='javascripts/dropdown.js') }}" defer="defer"></script>
     <title>Classify a Data</title>
@@ -29,13 +30,13 @@
             <div class="navbar-links">
                 <ul>
                     <li>
-                        <a class="nav-link {{ navbar_post }}" href="{{ url_for('dataset') }}">Data</a>
+                        <a class="nav-link" href="{{ url_for('dataset') }}">Data</a>
                     </li>
                     <li>
                         <a class="nav-link" href="{{ url_for('preproccessing') }}">Preproccessing</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="{{ url_for('modelling') }}">Modelling</a>
+                        <a class="nav-link {{ navbar_post }}" href="{{ url_for('modelling') }}">Modelling</a>
                     </li>
                     <li>
                         <a class="nav-link" href="{{ url_for('input') }}">Classifier</a>
@@ -48,53 +49,39 @@
     <main>
         <section class="hero">
             <h1>
-                Dataset
+                Modelling
                 <p>
                     Dry Bean
                 </p>
             </h1>
         </section>
-        <section class="table-sections dataset">
-            <h2 class="hidden"></h2>
-            <a href="https://archive.ics.uci.edu/ml/datasets/Dry+Bean+Dataset" target="_blank" id="main-button">Sumber Dataset</a>
-            {% for table in tables %}
-                {{ table|safe }}
-            {% endfor %}
-        </section>
-        <section class="dataset-description">
-            <h2 class="hidden">dataset description</h2>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>
-                            Attribute
-                        </th>
-                        <th>
-                            Description
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for name, desc in attribute_names.items() %}
-                    <tr>
-                        <td>
-                            <p class="pseudocode">
-                                {{ name }}
-                            </p>
-                        </td>
-                        <td>
-                            <p>
-                                {{ desc }}
-                            </p>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        <section>
 
+        <section class="self-card-container">
+            <h1 class="hidden"></h1>
+            <ul class="self-list">
+                {% for dict_item in acc_values %}
+                    <li class="self" id="">
+                        <div class="self-header">
+                            {% for key, value in dict_item.items() %}
+                                <p>{{ value }}</p>
+                                <p class="">{{ key["name"] }}</p>
+                            {% endfor %}
+                        <div>
+                    </li>
+                {% endfor %}
+            </ul>
         </section>
     </main>
+    {% for dict_item in acc_values %}
+        <li class="self" id="">
+            <div class="self-header">
+                {% for key, value in dict_item.items() %}
+                    <p>{{ value }}</p>
+                    <p class="">{{ key["name"] }}</p>
+                {% endfor %}
+            <div>
+        </li>
+    {% endfor %}
 
     <footer>
         <div class="container">
@@ -105,6 +92,5 @@
             </div>
         </div>
     </footer>
-
-
-</body></html>
+</body>
+</html>
